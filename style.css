@@ -1,6 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.7;color:#666;background:#fff}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.7;color:#666;background:#fff}
 a{color:#2ea3f2;text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.8}
 img{max-width:100%;height:auto;display:block}
@@ -25,18 +25,21 @@ h1,h2,h3,h4{color:#333;font-weight:600;line-height:1.3}
 .main-nav .submenu a{display:block;padding:8px 20px;color:#666;white-space:nowrap}
 .main-nav .submenu a:hover{color:#2ea3f2;background:rgba(46,163,242,.05)}
 .main-nav .submenu a.active{color:#2ea3f2;font-weight:600}
-.hero{background:linear-gradient(rgba(3,82,142,.72),rgba(3,82,142,.55)),url("assets/jupiter-pool-maintenance-cleaning-service-1080x675.jpg") center/cover no-repeat;padding:100px 0 90px}
+.hero{position:relative;overflow:hidden;padding:100px 0 90px}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(3,82,142,.72),rgba(3,82,142,.55));z-index:1}
+.hero .container{position:relative;z-index:2}
 .hero h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.04em;text-transform:uppercase}
 .hero h1 a{color:#fff}
 .services{padding:54px 0;background:#f7f9fb}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .service-card{background:#fff;border:1px solid #e5e5e5}
-.service-card h4{background:#03528e;color:#fff;padding:12px 16px;font-size:15px;letter-spacing:.03em;text-transform:uppercase}
+.service-card h2{background:#03528e;color:#fff;padding:12px 16px;font-size:15px;letter-spacing:.03em;text-transform:uppercase;font-weight:600}
 .service-card img{width:100%;height:100px;object-fit:cover;border-bottom:1px solid #e5e5e5}
 .service-card p{padding:16px;text-align:justify}
 .service-card .btn-wrap{padding:0 16px 20px;text-align:center}
-.btn{display:inline-block;padding:8px 24px;border:2px solid #7ebec5;color:#7ebec5;font-size:16px;font-weight:500;border-radius:3px;transition:background .2s,color .2s;cursor:pointer;background:transparent}
-.btn:hover{background:#7ebec5;color:#fff;opacity:1}
+.btn{display:inline-block;padding:8px 24px;border:2px solid #03528e;color:#03528e;font-size:16px;font-weight:500;border-radius:3px;transition:background .2s,color .2s;cursor:pointer;background:transparent}
+.btn:hover{background:#03528e;color:#fff;opacity:1}
 .cta{background:#03528e;color:#fff;text-align:center;padding:54px 20px}
 .cta h2{font-size:clamp(1.25rem,3vw,1.75rem);color:#fff;margin-bottom:12px}
 .cta p{margin-bottom:8px;color:rgba(255,255,255,.9)}
@@ -44,14 +47,14 @@ h1,h2,h3,h4{color:#333;font-weight:600;line-height:1.3}
 .cta a{color:#7ebec5}
 .content{padding:54px 0}
 .content-grid{display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:start}
-.section-title{background:#03528e;color:#fff;padding:10px 14px;font-size:15px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:20px}
+.section-title{background:#03528e;color:#fff;padding:10px 14px;font-size:15px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:20px;font-weight:600}
 .articles{display:flex;flex-direction:column;gap:24px}
 .article{display:grid;grid-template-columns:200px 1fr;gap:14px;padding-bottom:24px;border-bottom:1px solid #e5e5e5}
 .article:last-child{border-bottom:0;padding-bottom:0}
 .article img{width:200px;height:150px;object-fit:cover;border:1px solid #ccc;padding:2px}
-.article h2{font-size:18px;margin-bottom:6px}
-.article h2 a{color:#333}
-.article h2 a:hover{color:#2ea3f2}
+.article h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.article h3 a{color:#333}
+.article h3 a:hover{color:#2ea3f2}
 .contact-form{display:flex;flex-direction:column;gap:12px}
 .contact-form input{width:100%;padding:12px 14px;border:1px solid #ddd;background:#eee;font:inherit;color:#333;border-radius:0}
 .contact-form input:focus{outline:2px solid #7ebec5;border-color:#7ebec5}
@@ -59,7 +62,7 @@ h1,h2,h3,h4{color:#333;font-weight:600;line-height:1.3}
 .captcha-row input{width:60px;padding:8px}
 .site-footer{background:#03528e;color:#fff}
 .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:48px 20px}
-.footer-col h2{font-size:16px;color:#fff;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid #fff;text-transform:uppercase}
+.footer-col h3{font-size:16px;color:#fff;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid #fff;text-transform:uppercase;font-weight:600}
 .footer-col p,.footer-col a{color:#fff;line-height:2}
 .footer-col a:hover{color:#ccc;opacity:1}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
@@ -69,14 +72,14 @@ h1,h2,h3,h4{color:#333;font-weight:600;line-height:1.3}
 .page-layout{display:grid;grid-template-columns:2fr 1fr;gap:32px;padding:54px 0}
 .page-main h1{font-size:26px;margin-bottom:20px}
 .post-body p{margin-bottom:16px;text-align:justify}
-.post-body h3{font-size:16px;margin:24px 0 10px;color:#03528e}
+.post-body h2{font-size:16px;margin:24px 0 10px;color:#03528e;font-weight:600}
 .post-body img{margin-bottom:20px;border:1px solid #e5e5e5}
 .post-body ul,.post-body ol{margin:0 0 16px 24px}
 .post-body li{margin-bottom:8px}
 .post-body strong{color:#333}
 .sidebar-card{background:#03528e;color:#fff;padding:14px;margin-bottom:20px}
-.sidebar-card h4{font-size:15px;color:#fff;margin-bottom:8px;text-transform:uppercase}
-.sidebar-card a{color:#7ebec5;font-size:18px;font-weight:600}
+.sidebar-card h2,.sidebar-card h3{font-size:15px;color:#fff;margin-bottom:8px;text-transform:uppercase;font-weight:600}
+.sidebar-card a{color:#fff;font-size:18px;font-weight:600}
 @media(max-width:980px){
 .page-layout{grid-template-columns:1fr}
 .services-grid{grid-template-columns:1fr}
